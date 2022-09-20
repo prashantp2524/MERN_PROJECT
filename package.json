@@ -1,0 +1,29 @@
+{
+  "name": "amazonclone",
+  "version": "1.0.0",
+  "description": "mern app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder.js",
+    "data:destroy": " node backend/seeder.js -d"
+  },
+  "author": "prashant",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "concurrently": "^7.3.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.2",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "latest-version": "^7.0.0",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19"
+  }
+}

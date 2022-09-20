@@ -1,0 +1,20 @@
+const express = require("express");
+const { addOrderItem, getOrderById, updateOrderToPaid, getMyOrders } = require("../controllers/orderController");
+const { protect } = require("../midlewares/authMiddleware");
+const router = express.Router();
+
+//create new order
+router.route("/").post(protect, addOrderItem);
+
+//getuserOrder
+
+router.route("/myorders").get(protect,getMyOrders)
+
+//get order by id
+router.route("/:id").get(protect, getOrderById);
+
+//udate order
+
+router.route("/:id/pay").put(protect,updateOrderToPaid)
+
+module.exports = router;
